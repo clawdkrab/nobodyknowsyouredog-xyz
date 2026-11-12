@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- custom -->
+<!-- NOBODY: 1995 dial-up homepage inside a parody browser on a CRT. Hand-built, single file. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOBODY ($NOBODY) | On the Internet, nobody knows you're a dog</title>
+<meta name="description" content="$NOBODY: on the Internet, nobody knows you're a dog. On-chain, nobody knows either. A 1995 homepage meme coin on Solana.">
+<meta name="theme-color" content="#008080">
+<meta property="og:title" content="NOBODY ($NOBODY)">
+<meta property="og:description" content="On the Internet, nobody knows you're a dog. On-chain, nobody knows either.">
+<meta property="og:image" content="banner.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#008080;--grey:#c0c0c0;--dk:#808080;--blk:#000;--wht:#fff;--navy:#000080;--link:#0000ee;--visited:#551a8b;
+--ui:Tahoma,Verdana,"Segoe UI",sans-serif;--px:"VT323",monospace;--comic:"Comic Sans MS","Comic Neue",cursive;--serif:"Times New Roman",Times,serif}
+*{box-sizing:border-box}
+html,body{margin:0;overflow-x:hidden}
+body{background:var(--teal);font-family:var(--serif);color:#000;font-size:17px;line-height:1.5;cursor:default}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link)}a:visited{color:var(--visited)}
+button{font:inherit;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* bevels */
+.out{background:var(--grey);border:2px solid;border-color:#fff #000 #000 #fff;box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf}
+.in{background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;box-shadow:inset 1px 1px #000}
+.b95{font-family:var(--ui);font-size:13px;padding:5px 14px;color:#000;text-decoration:none;display:inline-block}
+.b95:active{border-color:#000 #fff #fff #000}
+/* ===== desktop wallpaper parallax ===== */
+#desk{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:linear-gradient(#2a8fd8 0%,#7cc4f2 55%,#bfe6ff 100%)}
+.layer{position:absolute;left:0;right:0;top:0;height:260vh;will-change:transform}
+.cloud{position:absolute;background:#fff;border-radius:60px;opacity:.95;box-shadow:0 0 0 6px rgba(255,255,255,.4)}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:55%;height:160%;left:12%;top:-70%}.cloud::after{width:40%;height:130%;right:12%;top:-50%}
+.l1 .cloud{opacity:.55;transform:scale(.6)}
+.icons{position:absolute;left:14px;top:20px;display:grid;gap:26px;pointer-events:auto}
+.ico{width:76px;text-align:center;font-family:var(--ui);font-size:11px;color:#fff;text-shadow:1px 1px #000}
+.ico i{display:block;width:34px;height:34px;margin:0 auto 4px;border:2px solid #000;font-style:normal;line-height:30px;font-weight:700;font-size:15px;color:#000}
+.flt{position:absolute;font-family:var(--px);font-size:34px;color:#fff;text-shadow:3px 3px 0 #000}
+/* CRT */
+#crt{position:fixed;inset:0;z-index:90;pointer-events:none;border-radius:22px;box-shadow:inset 0 0 0 10px #1a1a1a,inset 0 0 70px 20px rgba(0,0,0,.55);
+background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
+#crt::after{content:"";position:absolute;inset:0;border-radius:22px;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.06),transparent 50%)}
+/* ===== browser window ===== */
+#nav{position:relative;z-index:2;max-width:1000px;margin:34px auto 60px;padding:3px}
+.ttl{background:linear-gradient(90deg,var(--navy),#1084d0);color:#fff;font-family:var(--ui);font-weight:700;font-size:13px;padding:4px 6px;display:flex;align-items:center;gap:8px}
+.ttl .x{margin-left:auto;display:flex;gap:2px}.ttl .x span{width:18px;height:16px;font-size:11px;line-height:12px;text-align:center;color:#000}
+.menu{font-family:var(--ui);font-size:13px;display:flex;gap:16px;padding:4px 8px;flex-wrap:wrap}
+.menu u{text-decoration:underline}
+.tools{display:flex;gap:4px;padding:5px 6px;align-items:stretch;flex-wrap:wrap;border-top:1px solid #808080;border-bottom:1px solid #fff}
+.tb{width:58px;padding:3px 0 2px;font-family:var(--ui);font-size:11px;text-align:center;background:var(--grey);border:1px solid transparent;color:#000;text-decoration:none}
+.tb:hover{border-color:#fff #808080 #808080 #fff}
+.tb b{display:block;font-size:18px;line-height:20px}
+.throb{margin-left:auto;width:64px;height:58px;position:relative;overflow:hidden;background:linear-gradient(#000030,#0a2a6a)}
+.throb::before{content:"";position:absolute;width:3px;height:3px;background:#fff;box-shadow:12px 30px #fff,40px 8px #ffd,50px 40px #fff,22px 48px #fff;left:4px;top:6px}
+.throb span{position:absolute;left:12px;bottom:4px;font-family:var(--px);font-size:46px;line-height:46px;color:#fff;text-shadow:2px 2px 0 #000}
+.throb i{position:absolute;width:30px;height:2px;background:linear-gradient(90deg,transparent,#fff);top:-4px;left:-30px;transform:rotate(30deg);animation:meteor 1.8s linear infinite}
+@keyframes meteor{to{transform:translate(110px,64px) rotate(30deg)}}
+.loc{display:flex;gap:6px;align-items:center;padding:4px 8px;font-family:var(--ui);font-size:12px}
+.loc .in{flex:1;padding:2px 6px;font-family:var(--ui);font-size:13px;white-space:nowrap;overflow:hidden}
+.page{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='8' y='38' font-size='22' fill='%23eef3ff' font-family='serif'%3E%E2%99%A3%3C/text%3E%3C/svg%3E");
+margin:4px;padding:0 0 10px;min-height:60vh}
+.status{display:flex;gap:4px;padding:2px 4px;font-family:var(--ui);font-size:12px}
+.status .in{background:var(--grey);padding:1px 6px;box-shadow:none}
+.status .s1{flex:1}
+.bar{height:12px;width:120px;padding:1px}.bar div{height:100%;background:var(--navy);width:0}
+/* ===== content ===== */
+.sec{padding:34px clamp(14px,4vw,46px);border-bottom:3px ridge #c0c0c0;position:relative}
+h1,h2{font-family:var(--serif);margin:0 0 .4em}
+h2{font-size:clamp(28px,4.5vw,40px);color:var(--navy)}
+h2 small{font-family:var(--comic);font-size:15px;color:#c00;display:block}
+.marq{background:#000;color:#0f0;font-family:var(--px);font-size:22px;overflow:hidden;white-space:nowrap;border-top:2px solid #0f0;border-bottom:2px solid #0f0}
+.marq span{display:inline-block;padding-left:100%;animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;overflow:hidden}
+.hero h1{font-size:clamp(54px,10vw,112px);line-height:.9;font-family:Impact,"Arial Narrow Bold",sans-serif;letter-spacing:1px;
+background:linear-gradient(#ff0 0 30%,#f80 30% 55%,#f0f 55% 80%,#0ff 80%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #000}
+.tick{font-family:var(--px);font-size:28px;color:#c00}
+.tag{font-family:var(--comic);font-size:20px;margin:6px 0 16px}
+.buy{font-family:Impact,sans-serif;font-size:26px;letter-spacing:1px;padding:10px 26px;color:#000;text-decoration:none;display:inline-block;background:#ff0}
+.buy:hover{background:#0f0}
+.hframe{position:relative;padding:8px;rotate:1.5deg}
+.hframe img{border:2px solid #000}
+.cap{font-family:var(--comic);font-size:13px;text-align:center;margin-top:4px}
+.sticker{position:absolute;font-family:var(--px);font-size:22px;padding:2px 8px;border:2px solid #000;background:#ff0;rotate:-8deg;z-index:2}
+.uc{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;font-family:var(--ui);font-size:12px;font-weight:700}
+.uc i{width:70px;height:18px;background:repeating-linear-gradient(45deg,#000 0 10px,#fc0 10px 20px);border:1px solid #000;animation:uc .6s steps(2) infinite}
+@keyframes uc{to{background-position:20px 0}}
+.counter{display:inline-flex;gap:2px;background:#000;padding:3px;margin-left:6px;vertical-align:middle}
+.counter b{background:#222;color:#f33;font-family:var(--px);font-size:22px;width:16px;text-align:center;line-height:24px}
+.blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{visibility:hidden}}
+/* lore */
+.lore{display:grid;grid-template-columns:1fr 280px;gap:28px}
+.lore p{margin:0 0 1em}
+.lore .aside{font-family:var(--comic);font-size:15px}
+.aside .out{padding:10px;margin-bottom:14px}
+.aside img{border:2px solid #000;margin-bottom:6px}
+hr.rb{height:8px;border:0;background:linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,violet);margin:22px 0}
+/* chat */
+.aol{display:grid;grid-template-columns:1fr 200px;gap:6px;padding:6px}
+.log{height:300px;overflow-y:auto;padding:8px;font-family:Arial,sans-serif;font-size:14px}
+.log p{margin:0 0 5px}.log b{color:var(--navy)}.log .sys{color:#808080;font-style:italic}.log .me b{color:#c00}
+.ppl{height:300px;overflow:auto;padding:6px;font-family:Arial,sans-serif;font-size:13px}
+.ppl div::before{content:"\25CF ";color:#0a0}
+.say{display:flex;gap:6px;padding:0 6px 6px}.say input{flex:1;font:14px Arial,sans-serif;padding:4px}
+/* gallery explorer */
+.exp .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;padding:16px;background:#fff}
+.file{background:none;border:1px dotted transparent;padding:6px;text-align:center;font-family:var(--ui);font-size:12px;color:#000}
+.file:hover,.file:focus{border-color:#000;background:#000080;color:#fff;outline:none}
+.file img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid #000;margin-bottom:4px;image-rendering:pixelated}
+.win{position:fixed;z-index:80;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,92vw);padding:3px;display:none}
+.win.on{display:block}
+.win .body{padding:12px;font-family:var(--ui);font-size:13px}
+.win img{max-height:62vh;margin:0 auto;border:1px solid #000}
+/* wizard */
+.wiz{display:grid;grid-template-columns:170px 1fr;min-height:300px}
+.wiz .side{background:linear-gradient(#000080,#1084d0);color:#fff;font-family:var(--px);font-size:30px;padding:16px;line-height:1}
+.wiz .side small{display:block;font-size:18px;margin-top:10px;opacity:.85}
+.wiz .main{padding:18px;font-family:var(--ui);font-size:14px}
+.wiz ol{margin:0;padding-left:20px}.wiz li{margin:0 0 12px}
+.wiz li b{color:var(--navy)}
+/* properties / tokenomics */
+.props{max-width:520px;padding:3px}
+.tabs{display:flex;gap:2px;padding:8px 8px 0;font-family:var(--ui);font-size:12px}
+.tabs span{padding:3px 10px;border:2px solid;border-color:#fff #000 transparent #fff;background:var(--grey)}
+.pb{padding:14px;margin:0 8px 8px;border-top:0}
+.pb table{width:100%;font-family:var(--ui);font-size:13px;border-collapse:collapse}
+.pb td{padding:6px 4px;border-bottom:1px dotted #808080}.pb td:first-child{color:#444;width:42%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.ca .in{padding:10px;font-family:var(--px);font-size:22px;word-break:break-all;margin:8px 0}
+.bm a{display:block;padding:6px 10px;font-family:var(--ui);font-size:14px;color:#000;text-decoration:none}
+.bm a:hover{background:var(--navy);color:#fff}
+.gb{font-family:var(--comic);font-size:15px}
+.gb .e{border:1px dashed #808080;padding:8px;margin:0 0 8px;background:#ffffe0}
+.foot{padding:22px;text-align:center;font-family:var(--ui);font-size:12px;color:#333}
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.badge{width:88px;height:31px;border:1px solid #000;font-family:var(--px);font-size:13px;line-height:1;display:grid;place-items:center;text-align:center;padding:2px}
+/* dialup intro */
+#dial{position:fixed;inset:0;z-index:100;background:var(--teal);display:grid;place-items:center}
+#dial.gone{display:none}
+#dial .out{width:min(420px,92vw);padding:3px}
+.dbody{padding:16px;font-family:var(--ui);font-size:13px}
+.dsteps{display:flex;justify-content:space-between;margin:12px 0}
+.dsteps span{width:56px;height:56px;border:2px solid #808080;display:grid;place-items:center;font-family:var(--px);font-size:24px;opacity:.25;background:#fff}
+.dsteps span.on{opacity:1;border-color:#000080;animation:pop .3s}
+@keyframes pop{50%{transform:scale(1.15)}}
+.dbar{height:18px;padding:2px;margin:10px 0}.dbar div{height:100%;width:0;background:repeating-linear-gradient(90deg,#000080 0 10px,transparent 10px 12px);transition:width .4s}
+.noise{font-family:var(--px);font-size:18px;color:#000080;height:22px;overflow:hidden}
+/* mail popup */
+#mail{position:fixed;right:16px;bottom:16px;z-index:85;width:290px;padding:3px;display:none}
+#mail.on{display:block;animation:pop .35s}
+#mail .body{padding:12px;font-family:var(--ui);font-size:13px;display:flex;gap:10px;align-items:center}
+#mail .env{width:54px;height:38px;background:#fff8c4;border:2px solid #000;position:relative;flex:none}
+#mail .env::before{content:"";position:absolute;left:0;right:0;top:0;border-left:25px solid transparent;border-right:25px solid transparent;border-top:18px solid #e0c060}
+.trail{position:fixed;z-index:95;pointer-events:none;font-size:14px;color:#5a3a1a;font-family:var(--ui);transition:opacity .6s,transform .6s}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+.rv.vis{opacity:1;transform:none}
+.rv[data-speed]{transition:opacity .6s}
+@media (max-width:820px){
+.hero,.lore,.two,.aol,.wiz{grid-template-columns:1fr}
+.ppl{height:auto;max-height:110px}.icons{display:none}
+#nav{margin:10px 6px 40px}.tb{width:46px}.tb span{display:none}
+.wiz .side{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+</style>
+</head>
+<body>
+
+<!-- DIAL-UP INTRO (visual only) -->
+<div id="dial" role="dialog" aria-label="Connecting">
+<div class="out">
+<div class="ttl">Sign On - NOBODY Online 2.5<div class="x"><span class="out">_</span><span class="out">X</span></div></div>
+<div class="dbody">
+<div class="dsteps"><span>&#9742;</span><span>~~</span><span>&#128273;</span><span>&#9733;</span></div>
+<div class="noise" id="noise">Initializing modem...</div>
+<div class="dbar in"><div id="dbar"></div></div>
+<p style="margin:6px 0 12px">Screen name: <b>xX_TotallyAHuman_Xx</b><br>Password: <b>********</b> (it's "bone")</p>
+<button class="out b95" id="skip">Skip handshake &raquo;</button>
+</div>
+</div>
+</div>
+
+<!-- WALLPAPER PARALLAX -->
+<div id="desk" aria-hidden="true">
+<div class="layer l1" data-fix="0.12">
+<div class="cloud" style="left:8%;top:10vh;width:180px;height:44px"></div>
+<div class="cloud" style="left:62%;top:30vh;width:220px;height:50px"></div>
+<div class="cloud" style="left:30%;top:78vh;width:160px;height:40px"></div>
+<div class="cloud" style="left:80%;top:120vh;width:200px;height:44px"></div>
+<div class="cloud" style="left:12%;top:160vh;width:220px;height:50px"></div>
+</div>
+<div class="layer l2" data-fix="0.32">
+<div class="cloud" style="left:72%;top:6vh;width:240px;height:56px"></div>
+<div class="cloud" style="left:-4%;top:52vh;width:260px;height:60px"></div>
+<div class="cloud" style="left:84%;top:96vh;width:200px;height:50px"></div>
+<div class="cloud" style="left:4%;top:140vh;width:240px;height:56px"></div>
+<div class="flt" style="left:88%;top:62vh">woof</div>
+<div class="flt" style="left:3%;top:110vh">bark.exe</div>
+</div>
+<div class="layer" data-fix="0.6">
+<div class="icons">
+<div class="ico"><i style="background:#ffd">&#128193;</i>My Bones</div>
+<div class="ico"><i style="background:#ccc">&#128465;</i>Recycle Bin (has a sock)</div>
+<div class="ico"><i style="background:#cff">@</i>Inbox (3 sticks)</div>
+<div class="ico"><i style="background:#fcf">?</i>WHO_AM_I.TXT</div>
+</div>
+<div class="flt" style="right:3%;left:auto;top:170vh">&#9632; LOGIN OK</div>
+</div>
+</div>
+<div id="crt" aria-hidden="true"></div>
+
+<!-- BROWSER -->
+<div id="nav" class="out">
+<div class="ttl">Netsnout Navigator - [Welcome to NOBODY's Home Page!!!]<div class="x"><span class="out">_</span><span class="out">&#9633;</span><span class="out">X</span></div></div>
+<div class="menu"><span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>G</u>o</span><span><u>B</u>ookmarks</span><span><u>O</u>ptions</span><span><u>D</u>irectory</span><span><u>W</u>oof</span><span><u>H</u>elp</span></div>
+<div class="tools">
+<a class="tb" href="#top"><b>&#9664;</b><span>Back</span></a>
+<a class="tb" href="#lore"><b>&#9654;</b><span>Forward</span></a>
+<a class="tb" href="#top"><b>&#8962;</b><span>Home</span></a>
+<a class="tb" href="#chat"><b>&#9993;</b><span>Chat</span></a>
+<a class="tb" href="#pics"><b>&#128247;</b><span>Images</span></a>
+<a class="tb" href="#buy"><b>$</b><span>Buy</span></a>
+<a class="tb" href="#links"><b>&#9733;</b><span>Links</span></a>
+<div class="throb in" aria-hidden="true"><i></i><span>N</span></div>
+</div>
+<div class="loc">Location: <div class="in" id="url">http://www.geopaws.com/Doghouse/1993/nobody/index.htm</div></div>
+
+<main class="page in" id="top">
+<div class="marq" aria-hidden="true"><span>*** WELCOME TO MY HOMEPAGE *** YOU ARE VISITOR NUMBER LOTS *** I AM DEFINITELY A HUMAN PERSON *** $NOBODY ON SOLANA *** PLEASE SIGN MY GUESTBOOK *** DO NOT ASK ME ABOUT THE MAILMAN ***</span></div>
+
+<!-- HERO -->
+<section class="sec hero">
+<div>
+<div class="tick">$NOBODY &middot; SOLANA &middot; EST. 1993 (in dog years: 2026)</div>
+<h1>NOBODY</h1>
+<p class="tag">"On the Internet, nobody knows you're a dog."<br><b>On-chain, nobody knows either.</b></p>
+<a class="buy out" href="#buy">&#9654; BUY $NOBODY</a>
+<div class="uc"><i></i>UNDER CONSTRUCTION <i></i></div>
+<p style="font-family:var(--ui);font-size:12px;margin:10px 0 0">Hits since 1993: <span class="counter" id="hits"></span></p>
+</div>
+<div class="hframe out" data-speed="-0.08">
+<span class="sticker" style="left:-14px;top:-10px">100% HUMAN</span>
+<img src="meme_01.jpg" alt="A dog sitting at an office desk in front of computers, captioned On the Internet nobody knows you're a dog" width="500" height="672">
+<div class="cap">me_at_work.jpg (95K) - definitely not a dog</div>
+<span class="sticker" style="right:-10px;bottom:30px;background:#0ff;rotate:6deg" data-speed="0.12">woof (typo)</span>
+</div>
+</section>
+
+<!-- LORE -->
+<section class="sec" id="lore">
+<h2>About Me (A Human) <small>&lt;-- this part is important, plz read</small></h2>
+<div class="lore">
+<div class="rv">
+<p><b>July 5, 1993.</b> <i>The New Yorker</i> runs a single-panel cartoon by Peter Steiner: a dog at a computer explaining to another dog, <i>"On the Internet, nobody knows you're a dog."</i> It goes on to become the most reprinted cartoon the magazine ever published. The Internet was about four modems old at the time, and it had already figured out its whole personality.</p>
+<p>Thirty-odd years later, the joke is the operating system. Your bank is a dog. Your favourite anon is a dog. That account that replies "this" to everything? Two dogs in a trench coat. Nobody checked, and nobody ever will.</p>
+<p>Then came the blockchain, which is basically the Internet but with receipts nobody reads. A wallet address doesn't have paws. It doesn't have a face. It's <b>7xK...</b> something. Could be a fund. Could be a Labrador. <b>On-chain, nobody knows you're a dog either.</b></p>
+<p>$NOBODY is the coin for every good boy who ever logged on under a fake screen name. No faces, no names, no roadmap: just a dog, a desk, and a Buy button he can technically reach with his nose.</p>
+<p><b>What does it do?</b> Nothing. It's a meme coin. What does a dog at a computer do? Exactly. He sits there. He looks very professional. Nobody asks questions.</p>
+</div>
+<div class="aside">
+<div class="out rv" data-speed="0.06"><img src="meme_03.jpg" alt="Crude drawing of a blob person with fangs standing at a computer" width="244" height="250">Me, a normal human, logging on. Note the normal human teeth.</div>
+<div class="out rv" data-speed="-0.05"><img src="meme_02.jpg" alt="MS Paint drawing of a white cat in bed typing on a keyboard" width="243" height="207">My roommate. Also not a dog. Possibly a cat. We do not discuss it.</div>
+</div>
+</div>
+</section>
+
+<!-- CHAT -->
+<section class="sec" id="chat">
+<h2>Lobby: Totally Humans Chat <small>12 people here. all of them people.</small></h2>
+<div class="out rv">
+<div class="ttl">Chat Room: Lobby 42 - People Only Please<div class="x"><span class="out">X</span></div></div>
+<div class="aol">
+<div class="log in" id="log" aria-live="polite"></div>
+<div class="ppl in" id="ppl"></div>
+</div>
+<form class="say" id="say"><input id="msg" maxlength="80" placeholder="Type something human..." aria-label="Chat message"><button class="out b95">Send</button></form>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="pics">
+<h2>My Photos (Of Me, A Human) <small>click a file to open it in PawView Pro</small></h2>
+<div class="out exp rv">
+<div class="ttl">C:\MYPICS\*.JPG - 9 object(s)<div class="x"><span class="out">X</span></div></div>
+<div class="grid in" id="grid"></div>
+</div>
+</section>
+
+<!-- HOW TO BUY -->
+<section class="sec" id="buy">
+<h2>Install $NOBODY <small>setup wizard. even a dog could do it (allegedly)</small></h2>
+<div class="out rv">
+<div class="ttl">$NOBODY Setup<div class="x"><span class="out">X</span></div></div>
+<div class="wiz">
+<div class="side">Welcome to $NOBODY Setup<small>This program will install a dog into your wallet.</small></div>
+<div class="main">
+<ol>
+<li><b>Get Phantom.</b> Download the Phantom wallet app or browser extension. Write the seed phrase on paper. Do not let anyone chew the paper.</li>
+<li><b>Get SOL.</b> Buy SOL on an exchange and send it to your Phantom address. Keep a little extra for fees (treats for the network).</li>
+<li><b>Go to pump.fun.</b> Connect your Phantom wallet. Nobody will know you're a dog. That's the whole point.</li>
+<li><b>Paste the CA.</b> Copy the official contract address from the box below and paste it into the search. Only ever use the one on this page.</li>
+<li><b>Buy $NOBODY.</b> Choose an amount, confirm in Phantom, then log off and go lie in a sunbeam.</li>
+</ol>
+<p style="text-align:right;margin:10px 0 0"><a class="out b95" href="#top">&lt; Back</a> <a class="out b95" href="#ca">Next &gt;</a> <a class="out b95" href="#top">Cancel</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TOKENOMICS + CA -->
+<section class="sec" id="ca">
+<!-- only keep these claims if true at launch -->
+<div class="two">
+<div class="out props rv">
+<div class="ttl">NOBODY.COIN Properties<div class="x"><span class="out">?</span><span class="out">X</span></div></div>
+<div class="tabs"><span>General</span><span style="background:#ddd">Security</span><span style="background:#ddd">Smells</span></div>
+<div class="out pb">
+<table>
+<tr><td>Name:</td><td><b>NOBODY</b></td></tr>
+<tr><td>Ticker:</td><td>$NOBODY</td></tr>
+<tr><td>Type:</td><td>Meme coin (Solana)</td></tr>
+<tr><td>Total supply:</td><td>1,000,000,000</td></tr>
+<tr><td>Launch:</td><td>Fair launch on pump.fun</td></tr>
+<tr><td>Owner:</td><td>Nobody. Possibly a dog.</td></tr>
+<tr><td>Attributes:</td><td>[x] Read-only &nbsp;[x] Good boy</td></tr>
+</table>
+</div>
+</div>
+<div class="rv">
+<h2 style="font-size:30px">Contract Address</h2>
+<div class="out ca" style="padding:12px">
+<div class="in" id="caText">Contract address revealed at launch</div>
+<button class="out b95" id="copy">Copy to Clipboard</button> <span id="copied" style="font-family:var(--ui);font-size:13px"></span>
+</div>
+<h2 style="font-size:30px;margin-top:22px" id="links">Bookmarks</h2>
+<div class="out bm">
+<a href="#">&#9733; X (Twitter) - where the dogs post</a>
+
+<a href="#">&#9733; pump.fun - the treat dispenser</a>
+<a href="#">&#9733; DexScreener - the squirrel monitor</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- GUESTBOOK -->
+<section class="sec gb">
+<h2>Sign My Guestbook!!! <small>(read only. hands are hard.)</small></h2>
+<div class="e rv"><b>Rex</b> (rex@kennel.net) wrote: great homepage fellow human. i too enjoy the human activity of taxes</div>
+<div class="e rv"><b>Sir Barksalot</b> wrote: who is a good boy. not me. i am an accountant</div>
+<div class="e rv"><b>Biscuit_94</b> wrote: the mailman logged on today. i do not trust him</div>
+<div class="e rv"><b>Anonymous</b> wrote: woof <span class="blink">&lt;-- typo</span></div>
+</section>
+
+<footer class="foot">
+<div class="badges">
+<div class="badge out">BEST VIEWED IN NETSNOUT 2.0</div>
+<div class="badge" style="background:#000;color:#0f0">800x600 RESOLUTION</div>
+<div class="badge" style="background:#ff0">MADE WITH NOTEPAD.EXE</div>
+<div class="badge" style="background:#00f;color:#fff">WOOF WIDE WEB RING</div>
+</div>
+<p><b>$NOBODY is a meme coin with no intrinsic value and no expectation of financial return.</b> It is for entertainment only. Nothing on this page is financial advice. Do your own research and never spend what you can't afford to lose.</p>
+<p>Not affiliated with, endorsed by, or connected to <i>The New Yorker</i>, Cond&eacute; Nast, or Peter Steiner. The phrase is quoted; the cartoon is not reproduced. Netsnout Navigator is a joke, not a real browser.</p>
+<p>&copy; 1993-2026 a human. This page was last updated: ages ago.</p>
+</footer>
+</main>
+<div class="status"><div class="in s1" id="stat">Document: Done</div><div class="in bar"><div id="sbar"></div></div><div class="in">&#128274;</div></div>
+</div>
+
+<!-- IMAGE VIEWER -->
+<div class="win out" id="viewer" role="dialog" aria-modal="true" aria-label="Image viewer">
+<div class="ttl"><span id="vname">PawView Pro</span><div class="x"><button class="out" id="vclose" aria-label="Close" style="width:20px;height:18px;font-size:11px;padding:0">X</button></div></div>
+<div class="body"><img id="vimg" src="meme_01.jpg" alt=""><p id="vcap" style="margin:8px 0 0"></p>
+<button class="out b95" id="vprev">&lt; Prev</button> <button class="out b95" id="vnext">Next &gt;</button></div>
+</div>
+
+<!-- YOU'VE GOT BONES -->
+<div id="mail" class="out" role="status">
+<div class="ttl">NOBODY Online<div class="x"><button class="out" id="mclose" aria-label="Close" style="width:20px;height:18px;font-size:11px;padding:0">X</button></div></div>
+<div class="body"><div class="env"></div><div><b style="font-size:16px">You've got bones!</b><br>1 new bone from: <i>xX_GoodBoy_Xx</i><br><a href="#buy">Open it</a></div></div>
+</div>
+
+<script>
+const CA = "";
+(function(){
+var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(s){return document.querySelector(s)};
+
+/* ---- dial-up intro ---- */
+var dial = $('#dial'), steps = dial.querySelectorAll('.dsteps span'), noise = $('#noise'), dbar = $('#dbar');
+var lines = ['Dialing 555-WOOF...','EEEEE-KRRRSHHH-dee-doo-dee...','bwaaaa-kssssshh-ding-ding...','Verifying password (bone)...','Connected at 14,400 bps!'];
+var di = 0, dt;
+function closeDial(){ clearInterval(dt); dial.classList.add('gone'); }
+if (RM) closeDial(); else {
+dt = setInterval(function(){
+if (di >= lines.length){ closeDial(); return; }
+noise.textContent = lines[di];
+if (steps[di]) steps[di].classList.add('on');
+dbar.style.width = ((di+1)/lines.length*100) + '%';
+di++;
+}, 650);
+}
+$('#skip').addEventListener('click', closeDial);
+
+/* ---- hit counter ---- */
+var hits = String(19930705 + Math.floor(Math.random()*999)).split('');
+$('#hits').innerHTML = hits.map(function(d){return '<b>'+d+'</b>'}).join('');
+
+/* ---- parallax ---- */
+var fixed = [].slice.call(document.querySelectorAll('[data-fix]'));
+var flow = [].slice.call(document.querySelectorAll('[data-speed]'));
+var sbar = $('#sbar'), stat = $('#stat'), url = $('#url');
+var ticking = false;
+var pages = {top:'index.htm',lore:'about_me_a_human.htm',chat:'chat.cgi?room=lobby42',pics:'mypics/',buy:'setup.exe',ca:'contract.txt'};
+function frame(){
+ticking = false;
+var y = window.scrollY, vh = window.innerHeight;
+var max = document.documentElement.scrollHeight - vh;
+fixed.forEach(function(el){ el.style.transform = 'translate3d(0,' + (-y*parseFloat(el.dataset.fix)) + 'px,0)'; });
+flow.forEach(function(el){
+var r = el.parentElement.getBoundingClientRect();
+var d = (r.top + r.height/2 - vh/2) * parseFloat(el.dataset.speed);
+el.style.transform = 'translate3d(0,' + d.toFixed(1) + 'px,0)';
+});
+var p = max > 0 ? y/max : 0;
+sbar.style.width = (p*100) + '%';
+stat.textContent = p < 0.98 ? 'Transferring data from www.geopaws.com... ' + Math.round(p*100) + '% of 28K' : 'Document: Done';
+var cur = 'top';
+Object.keys(pages).forEach(function(k){ var e = document.getElementById(k); if (e && e.getBoundingClientRect().top < vh*0.4) cur = k; });
+url.textContent = 'http://www.geopaws.com/Doghouse/1993/nobody/' + pages[cur];
+if (cur === 'pics' || cur === 'buy') showMail();
+}
+function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(frame); } }
+if (!RM){ window.addEventListener('scroll', onScroll, {passive:true}); window.addEventListener('resize', onScroll); }
+frame();
+
+/* ---- reveal ---- */
+var rv = document.querySelectorAll('.rv');
+if ('IntersectionObserver' in window && !RM){
+var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } }); }, {threshold:.15});
+rv.forEach(function(e){ io.observe(e); });
+} else rv.forEach(function(e){ e.classList.add('vis'); });
+
+/* ---- you've got bones ---- */
+var mail = $('#mail'), mailShown = false;
+function showMail(){ if (mailShown) return; mailShown = true; mail.classList.add('on'); }
+$('#mclose').addEventListener('click', function(){ mail.classList.remove('on'); });
+
+/* ---- chat room ---- */
+var ppl = ['xX_GoodBoy_Xx','Sir_Barksalot','FetchMaster2000','NotADog_Honest','Biscuit_94','ChewToyCEO','TailWagger_69','MrWhiskers (???)','Rex','DefinitelyKaren','LabRat_Labrador','BorkBorkCapital'];
+$('#ppl').innerHTML = ppl.map(function(p){ return '<div>' + p + '</div>'; }).join('');
+var script = [
+['sys','*** You are in "Lobby 42". ***'],
+['xX_GoodBoy_Xx','woof'],
+['NotADog_Honest','hello fellow humans. i too have thumbs'],
+['Sir_Barksalot','a/s/l?'],
+['FetchMaster2000','4/m/backyard'],
+['Biscuit_94','did someone say $NOBODY'],
+['ChewToyCEO','im on pump.fun rn. nobody knows im a dog'],
+['DefinitelyKaren','i would like to speak to the mailman\'s manager'],
+['TailWagger_69','WOOF WOOF WOOF (sorry caps lock)'],
+['MrWhiskers (???)','meow'],
+['sys','*** MrWhiskers (???) has been removed from the room. ***'],
+['BorkBorkCapital','bullish on bones. bearish on baths'],
+['Rex','brb the doorbell'],
+['Rex','BARK BARK BARK BARK'],
+['Rex','ok im back it was nobody'],
+['xX_GoodBoy_Xx','$NOBODY']
+];
+var log = $('#log'), si = 0, chatT = null;
+function esc(s){ return s.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function addLine(who, text, me){
+var p = document.createElement('p');
+if (who === 'sys'){ p.className = 'sys'; p.textContent = text; }
+else { if (me) p.className = 'me'; p.innerHTML = '<b>' + esc(who) + ':</b> ' + esc(text); }
+log.appendChild(p); log.scrollTop = log.scrollHeight;
+}
+function tick(){ var s = script[si % script.length]; addLine(s[0], s[1]); si++; if (log.children.length > 60) log.removeChild(log.firstChild); }
+if (RM){ script.forEach(function(s){ addLine(s[0], s[1]); }); }
+else if ('IntersectionObserver' in window){
+new IntersectionObserver(function(es){
+es.forEach(function(e){ if (e.isIntersecting && !chatT){ tick(); chatT = setInterval(tick, 1700); } else if (!e.isIntersecting && chatT){ clearInterval(chatT); chatT = null; } });
+}).observe($('#chat'));
+} else script.forEach(function(s){ addLine(s[0], s[1]); });
+$('#say').addEventListener('submit', function(ev){
+ev.preventDefault();
+var v = $('#msg').value.trim(); if (!v) return;
+var barks = v.split(/\s+/).map(function(w, i){ return i % 3 === 2 ? 'BARK' : 'woof'; }).join(' ');
+addLine('You', barks, true);
+$('#msg').value = '';
+setTimeout(function(){ addLine('NotADog_Honest', 'wow, so human. welcome'); }, 900);
+});
+
+/* ---- gallery ---- */
+var pics = [
+['meme_01.jpg','ME_AT_WORK.JPG','Me, at my job. Normal job. Normal guy.'],
+['meme_02.jpg','ROOMMATE.JPG','Roommate up late on the computer. Unrelated to dogs.'],
+['meme_03.jpg','SELFIE.JPG','Selfie. My teeth are normal human teeth.'],
+['remix_01.jpg','DEEPFRIED.JPG','What the Internet does to a JPEG after 30 years.'],
+['remix_02.jpg','14400BAUD.JPG','Same photo over a 14.4k modem. Still loading.'],
+['remix_03.jpg','TWINS.JPG','Two humans. Both accountants. Both dogs.'],
+['remix_04.jpg','SCAN0001.JPG','Scanned at the library. Do not ask how I used the scanner.'],
+['remix_05.jpg','WOOF.JPG','Caption was edited. Nobody noticed. That is the point.'],
+['remix_06.jpg','NIGHTSHIFT.JPG','Trading $NOBODY at 3am in the doghouse.']
+];
+var grid = $('#grid');
+grid.innerHTML = pics.map(function(p, i){
+return '<button class="file" data-i="' + i + '"><img src="' + p[0] + '" alt="" loading="lazy">' + p[1] + '</button>';
+}).join('');
+var viewer = $('#viewer'), vi = 0;
+function openPic(i){
+vi = (i + pics.length) % pics.length; var p = pics[vi];
+$('#vimg').src = '' + p[0]; $('#vimg').alt = p[2];
+$('#vname').textContent = 'PawView Pro - ' + p[1]; $('#vcap').textContent = p[2];
+viewer.classList.add('on');
+}
+grid.addEventListener('click', function(e){ var b = e.target.closest('.file'); if (b) openPic(+b.dataset.i); });
+$('#vclose').addEventListener('click', function(){ viewer.classList.remove('on'); });
+$('#vprev').addEventListener('click', function(){ openPic(vi - 1); });
+$('#vnext').addEventListener('click', function(){ openPic(vi + 1); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ viewer.classList.remove('on'); mail.classList.remove('on'); closeDial(); } });
+
+/* ---- CA copy ---- */
+if (CA) $('#caText').textContent = CA;
+$('#copy').addEventListener('click', function(){
+var out = $('#copied');
+if (!CA){ out.textContent = 'Not yet! Revealed at launch.'; return; }
+if (navigator.clipboard) navigator.clipboard.writeText(CA).then(function(){ out.textContent = 'Copied! Good boy.'; }, function(){ out.textContent = 'Copy failed, select it manually.'; });
+});
+
+/* ---- paw cursor trail ---- */
+if (!RM && matchMedia('(pointer:fine)').matches){
+var last = 0;
+document.addEventListener('mousemove', function(e){
+var now = Date.now(); if (now - last < 90) return; last = now;
+var s = document.createElement('span'); s.className = 'trail'; s.textContent = '\u2022\u00B7';
+s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+document.body.appendChild(s);
+requestAnimationFrame(function(){ s.style.opacity = '0'; s.style.transform = 'translateY(10px)'; });
+setTimeout(function(){ s.remove(); }, 650);
+});
+}
+})();
+</script>
+</body>
+</html>
